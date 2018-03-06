@@ -2,7 +2,7 @@
 =====
 ### 概述
 1. DotNetCore + EntityFrameworkCore
-2. Oracle + Sql混合喂养
+2. Oracle + MsSql混合喂养
 ### 更新日志
 [TODO.md](TODO.md)
 ### 解决方案
