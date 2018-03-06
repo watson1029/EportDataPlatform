@@ -20,5 +20,6 @@
 ---
 ## 部署
 ### DotNet Core Runtime 2.0.3
-### DataBase.MsSql2008R2
+### MsSql2008R2
+### Oracle11g
 ---
