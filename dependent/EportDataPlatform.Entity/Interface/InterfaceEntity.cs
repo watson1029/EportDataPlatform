@@ -11,10 +11,12 @@ namespace EportDataPlatform.Entity.InterfaceEntity
         public bool success { get; set; }
         public List<Error> errors { get; set; }
         public List<DataBase.ENTRY_RETURN> data { get; set; }
+        public EntRetParam param { get; set; }
         public EntRet_GetStatus_Response()
         {
             errors = new List<Error>();
             data = new List<DataBase.ENTRY_RETURN>();
+            param = new EntRetParam();
         }
     }
 
@@ -29,6 +31,13 @@ namespace EportDataPlatform.Entity.InterfaceEntity
             this.message = message;
             this.detalmessage = detalmessage;
         }
+    }
+
+    public class EntRetParam
+    {
+        public string Save_Ref_ID { get; set; }
+        public string Pre_Entry_ID { get; set; }
+        public string Entry_ID { get; set; }
     }
 
     public enum ErrorCode
