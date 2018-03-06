@@ -3,6 +3,7 @@
 ### 概述
 1. DotNetCore + EntityFrameworkCore
 2. Oracle + MsSql混合喂养
+3. [IEntry接口定义](src/EportDataPlatform.IEntry/STANDARD.md)
 ### 更新日志
 [TODO.md](TODO.md)
 ### 解决方案
