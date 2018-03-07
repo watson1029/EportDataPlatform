@@ -48,7 +48,7 @@ namespace EportDataPlatform.DataAccess.DataBase
                        where t.CHANNEL == "7"
                        where t.NOTE.StartsWith("Z")
                        select t.NOTE.Substring(0, 18);
-            return linq.ToString();
+            return linq.FirstOrDefault();
         }
 
         public string GetSaveByEntry(string entry_id)
@@ -61,7 +61,7 @@ namespace EportDataPlatform.DataAccess.DataBase
                        where t.CHANNEL == "7"
                        where t.NOTE.StartsWith("Z")
                        select t.NOTE.Substring(0, 18);
-            return linq.ToString();
+            return linq.FirstOrDefault();
         }
     }
 }

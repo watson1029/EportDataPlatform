@@ -25,19 +25,19 @@ namespace EportDataPlatform.IEntry.Controllers
                     case 'Z':
                         obj.data = da.GetBySaveRefID(param);
                         obj.param.Save_Ref_ID = param;
-                        obj.param.Entry_ID = obj.data[0].PRE_ENTRY_ID;
-                        obj.param.Entry_ID = obj.data[0].ENTRY_ID;
+                        obj.param.Pre_Entry_ID = obj.data[obj.data.Count - 1].PRE_ENTRY_ID;
+                        obj.param.Entry_ID = obj.data[obj.data.Count - 1].ENTRY_ID;
                         break;
                     case '0':
                         obj.data = da.GetByPreEntryID(param);
                         obj.param.Save_Ref_ID = da.GetSaveByPre(param);
                         obj.param.Pre_Entry_ID = param;
-                        obj.param.Entry_ID = obj.data[0].ENTRY_ID;
+                        obj.param.Entry_ID = obj.data[obj.data.Count - 1].ENTRY_ID;
                         break;
                     case '5':
                         obj.data = da.GetByEntryID(param);
                         obj.param.Save_Ref_ID = da.GetSaveByEntry(param);
-                        obj.param.Pre_Entry_ID = obj.data[0].PRE_ENTRY_ID;
+                        obj.param.Pre_Entry_ID = obj.data[obj.data.Count - 1].PRE_ENTRY_ID;
                         obj.param.Entry_ID = param;
                         break;
                     default:
