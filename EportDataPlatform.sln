@@ -7,11 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3FF6D8E-F8B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dependent", "dependent", "{0EE08A95-B988-46B2-B980-4CB9592E2090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EportDataPlatform.IEntry", "src\EportDataPlatform.IEntry\EportDataPlatform.IEntry.csproj", "{913B4E57-519F-40F6-8BE5-AC40BC0C3BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EportDataPlatform.Entity", "dependent\EportDataPlatform.Entity\EportDataPlatform.Entity.csproj", "{C395ECF5-001B-4534-80AC-C6B40B8D89F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EportDataPlatform.Entity", "dependent\EportDataPlatform.Entity\EportDataPlatform.Entity.csproj", "{C395ECF5-001B-4534-80AC-C6B40B8D89F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EportDataPlatform.DataAccess", "dependent\EportDataPlatform.DataAccess\EportDataPlatform.DataAccess.csproj", "{8AF299FE-8F33-4B8D-BA60-D8B323ABEB7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EportDataPlatform.DataAccess", "dependent\EportDataPlatform.DataAccess\EportDataPlatform.DataAccess.csproj", "{8AF299FE-8F33-4B8D-BA60-D8B323ABEB7B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AliOneTouch", "AliOneTouch", "{B39569A1-B281-4CF2-BC25-77D48E9CC4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTask", "src\AliOneTouch\AutoTask\AutoTask.csproj", "{5C5ED017-6A59-4263-B507-278B36E7BFAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EportDataPlatform.EntryDataApi", "src\EportDataPlatform.EntryDataApi\EportDataPlatform.EntryDataApi.csproj", "{6AB6EDA8-A12F-4517-ADA1-37C7FA293D5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EportDataPlatform.AliOneTouch.DataCapture", "src\AliOneTouch\EportDataPlatform.AliOneTouch.DataCapture\EportDataPlatform.AliOneTouch.DataCapture.csproj", "{5936E688-A708-4CBD-AC2F-5DC74CF5FE2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EportDataPlatform.AliOneTouch.AutoTask", "src\AliOneTouch\EportDataPlatform.AliOneTouch.AutoTask\EportDataPlatform.AliOneTouch.AutoTask.csproj", "{179FB900-E743-4B32-9FC9-A6F177E3F29A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{913B4E57-519F-40F6-8BE5-AC40BC0C3BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{913B4E57-519F-40F6-8BE5-AC40BC0C3BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{913B4E57-519F-40F6-8BE5-AC40BC0C3BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{913B4E57-519F-40F6-8BE5-AC40BC0C3BBE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C395ECF5-001B-4534-80AC-C6B40B8D89F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C395ECF5-001B-4534-80AC-C6B40B8D89F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C395ECF5-001B-4534-80AC-C6B40B8D89F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,14 +35,34 @@ Global
 		{8AF299FE-8F33-4B8D-BA60-D8B323ABEB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AF299FE-8F33-4B8D-BA60-D8B323ABEB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AF299FE-8F33-4B8D-BA60-D8B323ABEB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C5ED017-6A59-4263-B507-278B36E7BFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C5ED017-6A59-4263-B507-278B36E7BFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C5ED017-6A59-4263-B507-278B36E7BFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C5ED017-6A59-4263-B507-278B36E7BFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB6EDA8-A12F-4517-ADA1-37C7FA293D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB6EDA8-A12F-4517-ADA1-37C7FA293D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB6EDA8-A12F-4517-ADA1-37C7FA293D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB6EDA8-A12F-4517-ADA1-37C7FA293D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5936E688-A708-4CBD-AC2F-5DC74CF5FE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5936E688-A708-4CBD-AC2F-5DC74CF5FE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5936E688-A708-4CBD-AC2F-5DC74CF5FE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5936E688-A708-4CBD-AC2F-5DC74CF5FE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179FB900-E743-4B32-9FC9-A6F177E3F29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179FB900-E743-4B32-9FC9-A6F177E3F29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179FB900-E743-4B32-9FC9-A6F177E3F29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179FB900-E743-4B32-9FC9-A6F177E3F29A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{913B4E57-519F-40F6-8BE5-AC40BC0C3BBE} = {B3FF6D8E-F8B5-4470-8807-CC81371818FD}
 		{C395ECF5-001B-4534-80AC-C6B40B8D89F7} = {0EE08A95-B988-46B2-B980-4CB9592E2090}
 		{8AF299FE-8F33-4B8D-BA60-D8B323ABEB7B} = {0EE08A95-B988-46B2-B980-4CB9592E2090}
+		{B39569A1-B281-4CF2-BC25-77D48E9CC4D9} = {B3FF6D8E-F8B5-4470-8807-CC81371818FD}
+		{5C5ED017-6A59-4263-B507-278B36E7BFAB} = {B39569A1-B281-4CF2-BC25-77D48E9CC4D9}
+		{6AB6EDA8-A12F-4517-ADA1-37C7FA293D5D} = {B3FF6D8E-F8B5-4470-8807-CC81371818FD}
+		{5936E688-A708-4CBD-AC2F-5DC74CF5FE2E} = {B39569A1-B281-4CF2-BC25-77D48E9CC4D9}
+		{179FB900-E743-4B32-9FC9-A6F177E3F29A} = {B39569A1-B281-4CF2-BC25-77D48E9CC4D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E081A1AC-A6D1-4EF6-A82C-3AFCBA6F49B1}

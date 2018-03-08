@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace EportDataPlatform.Entity.InterfaceEntity
+namespace EportDataPlatform.Entity.Interface.ReturnApi
 {
-    public class EntRet_GetStatus_Response
+    public class GetStatus_Response
     {
         public bool success { get; set; }
         public List<Error> errors { get; set; }
         public List<DataBase.ENTRY_RETURN> data { get; set; }
-        public EntRetParam param { get; set; }
-        public EntRet_GetStatus_Response()
+        public GetStatusParam param { get; set; }
+        public GetStatus_Response()
         {
             errors = new List<Error>();
             data = new List<DataBase.ENTRY_RETURN>();
-            param = new EntRetParam();
+            param = new GetStatusParam();
         }
     }
 
@@ -33,7 +31,7 @@ namespace EportDataPlatform.Entity.InterfaceEntity
         }
     }
 
-    public class EntRetParam
+    public class GetStatusParam
     {
         public string Save_Ref_ID { get; set; }
         public string Pre_Entry_ID { get; set; }

@@ -4,18 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using EportDataPlatform.Entity.Interface.ReturnApi;
 
-namespace EportDataPlatform.IEntry.Controllers
+namespace EportDataPlatform.EntryDataApi.Controllers
 {
     [Produces("application/json")]
-    [Route("api/EntRet")]
-    public class EntRetController : Controller
+    [Route("api/Return")]
+    public class ReturnController : Controller
     {
         [Route("GetStatus/{param}")]
         [HttpGet]
-        public Entity.InterfaceEntity.EntRet_GetStatus_Response GetStatus(string param)
+        public GetStatus_Response GetStatus(string param)
         {
-            Entity.InterfaceEntity.EntRet_GetStatus_Response obj = new Entity.InterfaceEntity.EntRet_GetStatus_Response();
+            GetStatus_Response obj = new GetStatus_Response();
             try
             {
                 DataAccess.DataBase.ENTRY_RETURN da = new DataAccess.DataBase.ENTRY_RETURN();
@@ -42,14 +43,14 @@ namespace EportDataPlatform.IEntry.Controllers
                         break;
                     default:
                         obj.success = false;
-                        obj.errors.Add(new Entity.InterfaceEntity.Error(Entity.InterfaceEntity.ErrorCode.参数错误, $"{Entity.InterfaceEntity.ErrorCode.参数错误.ToString()}:param={param}", $"请输入正确的暂存编号(Z开头)/预录入编号（0开头）/报关单号（5开头）."));
+                        obj.errors.Add(new Error(ErrorCode.参数错误, $"{ErrorCode.参数错误.ToString()}:param={param}", $"请输入正确的暂存编号(Z开头)/预录入编号（0开头）/报关单号（5开头）."));
                         break;
                 }
             }
             catch (Exception ex)
             {
                 obj.success = false;
-                obj.errors.Add(new Entity.InterfaceEntity.Error(Entity.InterfaceEntity.ErrorCode.未知错误, $"{Entity.InterfaceEntity.ErrorCode.未知错误.ToString()}:param={param},{ex.Message}", $"{ex.ToString()}"));
+                obj.errors.Add(new Error(ErrorCode.未知错误, $"{ErrorCode.未知错误.ToString()}:param={param},{ex.Message}", $"{ex.ToString()}"));
             }
             return obj;
         }

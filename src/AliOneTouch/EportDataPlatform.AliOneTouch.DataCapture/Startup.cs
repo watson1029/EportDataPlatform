@@ -4,13 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace EportDataPlatform.IEntry
+namespace EportDataPlatform.AliOneTouch.DataCapture
 {
     public class Startup
     {
@@ -24,12 +23,6 @@ namespace EportDataPlatform.IEntry
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IConfiguration>(Configuration);
-
-            //services.AddOptions();
-            //services.AddDbContext<DataAccess.Context.EntRetDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
-
-            //services.AddEntityFrameworkSqlServer().AddDbContext<DataAccess.Context.EntRetDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
             services.AddMvc();
         }
 
