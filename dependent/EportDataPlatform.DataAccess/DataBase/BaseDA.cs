@@ -1,25 +1,28 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EportDataPlatform.DataAccess.DataBase
 {
-    public class BaseDA
+    public class BaseDa
     {
-        protected readonly Context.EntRetDbContext _context;
-        public BaseDA()
+        protected readonly Context.EntRetDbContext _EntRetContext;
+        protected readonly Context.EntDataDbContext _EntDataContext;
+        public BaseDa()
         {
-            DbContextOptions<Context.EntRetDbContext> dbContextOption = new DbContextOptions<Context.EntRetDbContext>();
-            DbContextOptionsBuilder<Context.EntRetDbContext> dbContextOptionBuilder = new DbContextOptionsBuilder<Context.EntRetDbContext>(dbContextOption);
-            _context = new Context.EntRetDbContext(dbContextOptionBuilder.UseSqlServer(Helper.ConfigurationHelper.Configuration.GetConnectionString("SqlServer")).Options);
-            //_context = new Context.EntRetDbContext
-            //    (dbContextOptionBuilder.UseSqlServer(new ConfigurationBuilder()
-            //    .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
-            //    .Build().GetConnectionString("SqlServer"))
-            //    .Options);
+            if (string.IsNullOrEmpty(Watson.Base.DotNetCore.ConfigurationHelper.Configuration.GetConnectionString("Ent_Ret")))
+            {
+                //ENT_RET
+                DbContextOptions<Context.EntRetDbContext> dbContextOption1 = new DbContextOptions<Context.EntRetDbContext>();
+                DbContextOptionsBuilder<Context.EntRetDbContext> dbContextOptionBuilder1 = new DbContextOptionsBuilder<Context.EntRetDbContext>(dbContextOption1);
+                _EntRetContext = new Context.EntRetDbContext(dbContextOptionBuilder1.UseSqlServer(Watson.Base.DotNetCore.ConfigurationHelper.Configuration.GetConnectionString("Ent_Ret")).Options);
+            }
+            if (string.IsNullOrEmpty(Watson.Base.DotNetCore.ConfigurationHelper.Configuration.GetConnectionString("Ent_Data")))
+            {
+                //ENT_DATA
+                DbContextOptions<Context.EntDataDbContext> dbContextOption2 = new DbContextOptions<Context.EntDataDbContext>();
+                DbContextOptionsBuilder<Context.EntDataDbContext> dbContextOptionBuilder2 = new DbContextOptionsBuilder<Context.EntDataDbContext>(dbContextOption2);
+                _EntDataContext = new Context.EntDataDbContext(dbContextOptionBuilder2.UseSqlServer(Watson.Base.DotNetCore.ConfigurationHelper.Configuration.GetConnectionString("Ent_Data")).Options);
+            }
         }
     }
 }

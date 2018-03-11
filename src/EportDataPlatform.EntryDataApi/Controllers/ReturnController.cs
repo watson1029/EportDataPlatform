@@ -19,7 +19,7 @@ namespace EportDataPlatform.EntryDataApi.Controllers
             GetStatus_Response obj = new GetStatus_Response();
             try
             {
-                DataAccess.DataBase.ENTRY_RETURN da = new DataAccess.DataBase.ENTRY_RETURN();
+                DataAccess.DataBase.EntRetDa da = new DataAccess.DataBase.EntRetDa();
                 obj.success = true;
                 switch (param[0])
                 {

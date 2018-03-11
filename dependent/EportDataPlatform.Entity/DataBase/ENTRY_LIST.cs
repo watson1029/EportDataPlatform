@@ -18,7 +18,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
-namespace Maticsoft.Model
+namespace EportDataPlatform.Entity.DataBase
 {
 	/// <summary>
 	/// ENTRY_LIST:实体类(属性说明自动提取数据库字段的描述信息)
