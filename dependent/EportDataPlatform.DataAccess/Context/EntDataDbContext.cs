@@ -16,5 +16,4 @@ namespace EportDataPlatform.DataAccess.Context
 
         public DbSet<Entity.DataBase.Para_YDTExport> Para_YDTExport { get; set; }
     }
-        
 }
